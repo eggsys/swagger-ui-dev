@@ -11,11 +11,12 @@ multi-document was designed to support scalable multi API document in 1 reposito
 
 
 ## document
-https://swagger.io/docs
+https://swagger.io/docs/specification
 
 **should have read**
 https://swagger.io/docs/open-source-tools/swagger-ui/usage/configuration/
 
+`$ref`[using-ref](https://swagger.io/docs/specification/using-ref/).
 
 ## Development goal/plan
 - [x] support multi-YAML file
