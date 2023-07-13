@@ -1,0 +1,6 @@
+- docker-compose.yml
+- nginx.conf
+- order-service/
+  - openapi.yml
+- account-service/
+  - openapi.yml

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 8080:8080
+    volumes:
+      - ./open:/usr/share/nginx/html/open
+
+    environment:
+      - API_URL=./open/openapi.yml
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf

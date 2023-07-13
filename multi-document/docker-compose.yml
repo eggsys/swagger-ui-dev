@@ -1,0 +1,25 @@
+version: '3'
+services:
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - 8080:8080
+    volumes:
+      - ./order-service:/usr/share/nginx/html/order-service
+      - ./account-service:/usr/share/nginx/html/account-service
+      # - ./swagger-config.js:/usr/share/nginx/html/swagger-config.js 
+
+    environment:
+      # - API_URL=order-service/openapi.yml
+      - URLS=[{url:"order-service/openapi.yml", name:"order-service"},{url:"account-service/openapi.yml", name:"account-service"}]
+      # - URL1=rder-service/openapi.yml
+      # - NAME1=API 1
+      # - URL2=account-service/openapi.yml
+      # - NAME2=API 2
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf

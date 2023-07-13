@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Your API Title
+  description: Your API description goes here
+servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+tags:
+  - name: User
+    description: Operations related to user management
+paths:
+  /users:
+    $ref: './users.yml#/users'
+  /users/{id}:
+    $ref: './users.yml#/users-id'
